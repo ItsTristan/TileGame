@@ -34,6 +34,8 @@ Board sizes are notated as [ROW]x[COL]x[START POOL]. For example, the standard b
 * The 5x5x26 board has an upper bound of 526,787,770,292,436 x 25! / 8 = 1,021,389,469,157,996,212,330,519,487,152,128,000,000 = 1.02x10^39 possible states.
 * The 2x2x4 board has an upper bound of 153 states using the same analysis (the true number of states is a little closer  to 147, less some specific symmetries)
 * In a 2x2, Player 2 always has a winning strategy if P > 1.
+
+* An alternative way to count points: +1 for every turn the player makes, +2 for every tile the player flips. This counting scheme is monotonic.
  
 
 #### Perfect Play

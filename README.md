@@ -35,6 +35,38 @@ Board sizes are notated as [ROW]x[COL]x[START POOL]. For example, the standard b
 * The 2x2x4 board has an upper bound of 153 states using the same analysis (the true number of states is a little closer  to 147, less some specific symmetries)
 * In a 2x2, Player 2 always has a winning strategy if P > 1.
  
+
+#### Perfect Play
+
 Below is an animation showing perfect play for a 3x3x10 board:
 
 ![optimal_play](https://github.com/ItsTristan/TileGame/assets/10429871/2b068679-8365-4276-8ece-129b0c1c5405)
+
+
+#### Counting function
+
+Below is the python code I used to count the number of ways to draw points from the player pools:
+
+```py3
+cache = {}
+
+def count(max_turns, p1_pool, p2_pool):
+    if max_turns == 0:
+        return 1
+    if p1_pool == p2_pool == 0:
+        return 1
+
+    key = (max_turns, p1_pool, p2_pool)
+    if key in cache:
+        return cache[key]
+
+    counter = 0
+    for p1 in range(1, p1_pool + 1):
+        if p2_pool > 0:
+            counter += count(max_turns - 1, p2_pool, p1_pool - p1)
+        else:
+            counter += count(max_turns - 1, p1_pool - p1, 0)
+    
+    cache[key] = counter
+    return counter
+```

@@ -301,7 +301,7 @@ public class TileGame {
     /**
      * Counts the current score of the game.
      * The score is determined by the difference between the number
-     * of tiles players.Player 1 owns and the number of tiles players.Player 2 owns.
+     * of tiles Player 1 owns and the number of tiles Player 2 owns.
      * @return > 0 if PLAYER1 is in the lead,
      *         < 0 if PLAYER2 is in the lead,
      *         = 0 if tied.
@@ -437,7 +437,7 @@ public class TileGame {
 
     /**
      * Applies a given play to the board.
-     * players.Player is assumed to be the current player.
+     * Player is assumed to be the current player.
      * This alters the state of the board, including
      * performing flips, consuming the player's pool
      * and changing the current turn
@@ -575,7 +575,7 @@ public class TileGame {
                 int owner = getTileOwner(r, c);
                 int value = getTileValue(r, c);
 
-                // players.Player 1-owned tile
+                // Player 1-owned tile
                 if (owner == PLAYER1) {
                     if (value > 0) {
                         result.append(String.format("[%d] ", value));
@@ -583,7 +583,7 @@ public class TileGame {
                         result.append("[X] ");
                     }
 
-                    // players.Player 2-owned tile
+                    // Player 2-owned tile
                 } else if (owner == PLAYER2) {
                     if (value > 0) {
                         result.append(String.format("<%d> ", value));

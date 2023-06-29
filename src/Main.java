@@ -33,10 +33,9 @@ public class Main {
             p1 = new ABSearchPlayer(TileGame.PLAYER1);
             p2 = new ABSearchPlayer(TileGame.PLAYER2);
         } else if (mode == SOLVER) {
-            p1 = new ABSearchPlayer(TileGame.PLAYER1, game.rows * game.cols, null);
-            p2 = new ABSearchPlayer(TileGame.PLAYER2, game.rows * game.cols, null);
+            p1 = new ABSearchPlayer(TileGame.PLAYER1, game.rows * game.cols);
+            p2 = new ABSearchPlayer(TileGame.PLAYER2, game.rows * game.cols);
         }
-
 
         while (!game.isGameForfeitable()) {
             // Get the current player
